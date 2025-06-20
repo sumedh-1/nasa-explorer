@@ -1,0 +1,129 @@
+.mars-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: var(--color-card);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: background 0.3s;
+}
+.mars-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.mars-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-navbar-logo);
+}
+.mars-sol-input-wrapper {
+  min-width: 170px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+.mars-sol-input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  height: 40px;
+  box-sizing: border-box;
+  margin: 0;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.mars-sol-input:focus {
+  border: 1.5px solid var(--color-link-hover);
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.13);
+}
+.mars-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.mars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.mars-card {
+  background: var(--color-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.mars-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #222;
+  cursor: zoom-in;
+}
+.mars-card .mars-meta {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+.mars-card .mars-meta span {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.mars-favorite-btn {
+  background: var(--color-toggle-bg);
+  color: var(--color-toggle-text);
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  align-self: flex-end;
+  transition: background 0.3s, color 0.3s;
+}
+.mars-favorite-btn:hover {
+  background: var(--color-link-hover);
+  color: #fff;
+}
+.mars-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.mars-modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.7);
+}
+.mars-fun-fact {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--color-link-hover);
+  font-size: 1.07rem;
+}
+@media (max-width: 700px) {
+  .mars-page {
+    padding: 1rem 0.2rem;
+  }
+  .mars-card img {
+    height: 150px;
+  }
+}

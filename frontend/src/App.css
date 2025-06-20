@@ -1,0 +1,222 @@
+/* NASA Explorer Themed App.css */
+:root {
+  --color-bg: #10141a;
+  --color-bg-gradient: linear-gradient(120deg, #232526 0%, #414345 100%);
+  --color-text: #fff;
+  --color-navbar: #1b2735;
+  --color-navbar-logo: #ffcc00;
+  --color-link: #fff;
+  --color-link-hover: #ffcc00;
+  --color-card: #232526;
+  --color-toggle-bg: #232526;
+  --color-toggle-text: #ffcc00;
+}
+[data-theme="light"] {
+  --color-bg: #f5f7fa;
+  --color-bg-gradient: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+  --color-text: #222;
+  --color-navbar: #e3e7ed;
+  --color-navbar-logo: #003366;
+  --color-link: #005288;
+  --color-link-hover: #2266bb;
+  --color-card: #fff;
+  --color-toggle-bg: #fff;
+  --color-toggle-text: #003366;
+}
+
+[data-theme="dark"] {
+  --color-bg: #10141a;
+  --color-bg-gradient: linear-gradient(120deg, #232526 0%, #414345 100%);
+  --color-text: #fff;
+  --color-navbar: #1b2735;
+  --color-navbar-logo: #ffcc00;
+  --color-link: #fff;
+  --color-link-hover: #ffcc00;
+  --color-card: #232526;
+  --color-toggle-bg: #232526;
+  --color-toggle-text: #ffcc00;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+
+.App {
+  min-height: 100vh;
+  background: var(--color-bg-gradient);
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-navbar);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.3s;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-separator {
+  width: 1.5px;
+  height: 32px;
+  background: linear-gradient(
+    180deg,
+    var(--color-link-hover) 0%,
+    var(--color-navbar-logo) 100%
+  );
+  margin: 0 1rem;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+[data-theme="light"] .navbar-separator {
+  background: linear-gradient(
+    180deg,
+    var(--color-link-hover) 0%,
+    var(--color-navbar-logo) 100%
+  );
+}
+[data-theme="dark"] .navbar-separator {
+  background: linear-gradient(
+    180deg,
+    var(--color-link-hover) 0%,
+    var(--color-navbar-logo) 100%
+  );
+}
+
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--color-navbar-logo);
+  transition: color 0.3s;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  color: var(--color-navbar-logo);
+  transition: color 0.3s;
+}
+[data-theme="light"] .footer-section h4 {
+  color: #003366;
+}
+[data-theme="dark"] .footer-section h4 {
+  color: #ffcc00;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: var(--color-link-hover);
+}
+
+.main-content {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: none;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .main-content {
+    padding: 1rem 0.5rem;
+  }
+  .navbar-links {
+    gap: 1rem;
+  }
+  .navbar-separator {
+    width: 100%;
+    height: 2px;
+    margin: 0.5rem 0;
+    background: var(--color-link-hover);
+  }
+}
+
+.theme-toggle {
+  background: var(--color-toggle-bg);
+  color: var(--color-toggle-text);
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.theme-toggle:hover {
+  background: var(--color-link-hover);
+  color: #222;
+}
+

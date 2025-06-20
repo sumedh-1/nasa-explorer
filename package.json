@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-app",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm install && node app.js",
+    "client": "cd frontend && npm install && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "about": {
+    "title": "About",
+    "text": "NASA Explorer is a personal project created by Sumedh for learning and development purposes. It provides a creative interface to explore NASA data and APIs, and is not affiliated with or endorsed by NASA."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "email": "sumedh@example.com",
+    "github": "https://github.com/sumedh",
+    "text": "Have feedback or want to connect? <a href=\"mailto:sumedh@example.com\">Email me</a> or find me on <a href=\"https://github.com/sumedh\">GitHub</a>."
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "text": "This project is for educational and demonstration purposes only. All NASA data is sourced from public APIs. No commercial use intended."
+  },
+  "copyright": "© {year} Sumedh | NASA Explorer",
+  "funFacts": {
+    "apod": [
+      "Did you know? The speed of light is about 299,792 kilometers per second!",
+      "A day on Venus is longer than its year.",
+      "Neutron stars can spin at a rate of 600 rotations per second.",
+      "The Milky Way galaxy will collide with Andromeda in about 4 billion years!"
+    ],
+    "mars": [
+      "Mars is home to the tallest volcano in the solar system, Olympus Mons!",
+      "A year on Mars is 687 Earth days.",
+      "Mars has two moons: Phobos and Deimos.",
+      "The first successful Mars rover was Sojourner in 1997.",
+      "Mars is often called the 'Red Planet' due to iron oxide (rust) on its surface."
+    ],
+    "neo": [
+      "The largest known asteroid is Ceres, almost 1,000 km wide!",
+      "Most NEOs are less than 1 km in diameter.",
+      "NASA tracks thousands of NEOs to protect Earth.",
+      "The Chelyabinsk meteor in 2013 was about 20 meters wide!",
+      "An asteroid impact 66 million years ago contributed to the extinction of the dinosaurs."
+    ]
+  }
+}

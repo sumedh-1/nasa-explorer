@@ -1,0 +1,136 @@
+.neo-page {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: var(--color-card);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: background 0.3s;
+}
+.neo-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.neo-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--neo-header-color, var(--color-navbar-logo));
+}
+:root {
+  --neo-header-color: #1d3557;
+  --neo-fact-color: #ff6600;
+}
+[data-theme='dark'] {
+  --neo-header-color: #4fd3ff;
+  --neo-fact-color: #4fd3ff;
+  --neo-row-bg: #23272f;
+  --neo-row-hover-bg: #323843;
+  --neo-name-highlight: #4fd3ff;
+}
+
+
+.neo-fact {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--neo-fact-color);
+  font-size: 1.07rem;
+}
+.neo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background: var(--color-bg);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.neo-table th, .neo-table td {
+  padding: 0.7rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.neo-table th {
+  background: var(--neo-th-bg, var(--color-navbar-logo));
+  color: var(--neo-th-text, #fff);
+  font-weight: 600;
+}
+:root {
+  --neo-th-bg: #1d3557;
+  --neo-th-text: #fff;
+}
+[data-theme='dark'] {
+  --neo-th-bg: #273347;
+  --neo-th-text: #4fd3ff;
+}
+
+.neo-table tr:last-child td {
+  border-bottom: none;
+}
+.neo-table tr.hazardous {
+  background: rgba(255, 102, 0, 0.08);
+}
+.neo-table tr:hover {
+  background: var(--neo-hover-bg);
+  color: var(--neo-hover-text);
+  cursor: pointer;
+}
+[data-theme='dark'] .neo-table tr:not(.hazardous) {
+  background: var(--neo-row-bg);
+}
+[data-theme='dark'] .neo-table tr:not(.hazardous):hover {
+  background: var(--neo-row-hover-bg) !important;
+}
+[data-theme='dark'] .neo-table td.neo-name {
+  color: var(--neo-name-highlight) !important;
+}
+
+
+:root {
+  --neo-hover-bg: #e6eaff;
+  --neo-hover-text: #222;
+}
+[data-theme='dark'] {
+  --neo-hover-bg: #3d2323;
+  --neo-hover-text: #fff;
+}
+
+.neo-hazard {
+  color: #ff3300;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-left: 5px;
+}
+.neo-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.90);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+.neo-modal-content {
+  background: var(--color-card);
+  border-radius: 18px;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.7);
+  color: var(--color-text);
+  cursor: auto;
+}
+.neo-modal-content h3 {
+  margin-top: 0;
+}
+@media (max-width: 700px) {
+  .neo-page {
+    padding: 1rem 0.2rem;
+  }
+  .neo-table th, .neo-table td {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.2rem;
+  }
+  .neo-modal-content {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+}
