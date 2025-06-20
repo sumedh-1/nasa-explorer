@@ -1,11 +1,3 @@
-name: Full Stack CI
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
 jobs:
   test-backend:
     runs-on: ubuntu-latest
@@ -18,7 +10,12 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npm test
+      - run: npm test -- --coverage
+      - name: Upload backend coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: backend-coverage
+          path: ./backend/coverage/
 
   test-frontend:
     runs-on: ubuntu-latest
@@ -31,4 +28,10 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npm test
+      - run: npm test -- --coverage
+      - name: Upload frontend coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-coverage
+          path: ./frontend/coverage/
+          
