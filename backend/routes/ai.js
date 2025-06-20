@@ -18,7 +18,6 @@ router.post(
   '/summarize',
   limiter,
   body('text').isString().isLength({ min: 10, max: 4000 }),
-  body('provider').optional().isIn(['openai', 'gemini', 'ollama', 'huggingface', 'cohere']),
   async (req, res) => {
     const errors = validationResult(req);
     console.log('[AI SUMMARY] Request body:', req.body);
@@ -26,7 +25,16 @@ router.post(
       console.error('[AI SUMMARY] Validation failed:', errors.array());
       return res.status(400).json({ error: 'Validation failed', details: errors.array() });
     }
-    const { text, provider = 'openai' } = req.body;
+    const { text } = req.body;
+    // Provider selection logic
+    const providerOrder = ['huggingface', 'openai', 'gemini', 'ollama', 'cohere'];
+    let provider = req.body.provider;
+    if (!provider) {
+      provider = providerOrder.find(p => process.env[`${p.toUpperCase()}_API_KEY`] && process.env[`${p.toUpperCase()}_API_KEY`].trim());
+    }
+    if (!provider) {
+      return res.status(400).json({ error: 'No AI provider API key found in environment.' });
+    }
     const summarize = getProvider(provider);
     if (!summarize) {
       console.error(`[AI SUMMARY] Unknown provider: ${provider}`);
