@@ -1,5 +1,5 @@
 // Central API URL constants
-export const API_BASE = process.env.BACKEND_API_URL || 'http://localhost:3000';
+export const API_BASE = process.env.REACT_APP_BACKEND_API_URL || 'http://localhost:3000';
 export const NASA_APOD_URL = `${API_BASE}/api/nasa/apod`;
 export const NASA_MARS_PHOTOS_URL = `${API_BASE}/api/nasa/mars-photos`;
 export const NASA_NEO_URL = `${API_BASE}/api/nasa/neo`;
