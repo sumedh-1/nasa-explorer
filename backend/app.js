@@ -6,8 +6,18 @@ const app = express();
 app.use(express.json());
 
 // Detailed CORS config and logging
+// Configurable CORS origins from .env (comma-separated)
+const allowedOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3001').split(',').map(o => o.trim());
+
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser requests
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
